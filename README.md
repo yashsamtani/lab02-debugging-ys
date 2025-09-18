@@ -1,19 +1,7 @@
-# lab02-debugging
-
-# Setup 
-
-Create a [Shadertoy account](https://www.shadertoy.com/). Either fork this shadertoy, or create a new shadertoy and copy the code from the [Debugging Puzzle](https://www.shadertoy.com/view/flGfRc).
-
-Let's practice debugging! We have a broken shader. It should produce output that looks like this:
-[Unbelievably beautiful shader](https://user-images.githubusercontent.com/1758825/200729570-8e10a37a-345d-4aff-8eff-6baf54a32a40.webm)
-
-It don't do that. Correct THREE of the FIVE bugs that are messing up the output. You are STRONGLY ENCOURAGED to work with a partner and pair program to force you to talk about your debugging thought process out loud.
-
-Extra credit if you can find all FIVE bugs.
-
-# Submission
-- Create a pull request to this repository
-- In the README, include the names of both your team members
-- In the README, create a link to your shader toy solution with the bugs corrected
-- In the README, describe each bug you found and include a sentence about HOW you found it.
-- Make sure all three of your shadertoys are set to UNLISTED or PUBLIC (so we can see them!)
+Name (solo): Yash Samtani
+Link: https://www.shadertoy.com/view/wc2fzR
+Bug #1: In line 95 of image, we declare vec instead of vec2 - fixed by just changing this, and found this by just compiling the code and seeing the syntax error on that line.
+Bug #2: Instead of passing uv2 into the raycast function, we pass uv -> for this, it was fairly close to the first error, and I saw the logical error with raycasting.
+Bug #3: We were doing H *= len * iResolution.x / iResolution.x;, which just equals 1 -> we should instead divide by y. I found this by seeing there was an issue with the image being incorrectly stretched/compressed.
+Bug #4: Reflect uses eye instead of dir -> I just noticed the balls were not reflecting the floor as intended, and tried to look for reasons why.
+Bug #5: Increase the number of march steps from 64 to 640 -> renders much more of the floor.
